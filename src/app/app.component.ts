@@ -5,6 +5,7 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
 import { NgIfComponent } from './ng-if/ng-if.component';
 import { NgForComponent } from './ng-for/ng-for.component';
 import { NgClassComponent } from './ng-class/ng-class.component';
+import { NgStyleComponent } from './ng-style/ng-style.component';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,8 @@ import { NgClassComponent } from './ng-class/ng-class.component';
     DataBindingComponent, 
     NgIfComponent,
     NgForComponent,
-    NgClassComponent
+    NgClassComponent,
+    NgStyleComponent
     ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

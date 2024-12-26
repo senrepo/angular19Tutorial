@@ -11,5 +11,4 @@ export class NgClassComponent {
   divBgColor: string = 'redBackground';
   theme: string[] = ['redBackground', 'blueFont'];
   isMultiColor: boolean = false;
-
 }

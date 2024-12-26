@@ -1,0 +1,54 @@
+<p>ng-style works!</p>
+
+<p [ngStyle]="{'background-color' : 'red'}">
+    Style 1
+</p>
+
+<p [ngStyle]="{'background-color' : background, 'color' : font}">
+    Style 2
+</p>
+
+<label>Enter background Color:</label>
+<input type="text" [(ngModel)]="background" />
+
+<label>Enter Font Color:</label>
+<input type="text" [(ngModel)]="font" />
+
+<p [ngStyle]="{'background-color' : isOverride === true ? 'green': background}">
+    Style 3
+</p>
+
+<input type="checkbox" id="horns" name="overrideBackground" [(ngModel)]="isOverride" />
+<label for="overrideBackground">Override to Green Background</label>
+
+<p>
+    {{isOverride}}
+</p>
+
+
+Alternatively use the property binding [style]
+
+<p [style]="{'background-color' : 'red'}">
+    Style 1
+</p>
+
+<p [style]="{'background-color' : background, 'color' : font}">
+    Style 2
+</p>
+
+<label>Enter background Color:</label>
+<input type="text" [(ngModel)]="background" />
+
+<label>Enter Font Color:</label>
+<input type="text" [(ngModel)]="font" />
+
+<p [style]="{'background-color' : isOverride === true ? 'green': background}">
+    Style 3
+</p>
+
+<input type="checkbox" id="horns" name="overrideBackground" [(ngModel)]="isOverride" />
+<label for="overrideBackground">Override to Green Background</label>
+
+<p>
+    {{isOverride}}
+</p>
