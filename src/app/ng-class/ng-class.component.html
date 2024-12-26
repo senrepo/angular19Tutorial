@@ -1,0 +1,40 @@
+<p>ng-class works!</p>
+
+<div [ngClass]="divBgColor">
+    ngClass 1 
+</div>
+
+<p>
+</p>
+
+<div [ngClass]="theme">
+    ngClass 2 
+</div>
+
+<p>
+</p>
+
+<div [ngClass]="isMultiColor === true ? ['redBackground', 'blueFont'] : 'redBackground'">
+    ngClass 3 
+</div>
+
+
+Or use the property Binding 
+
+<div [class]="divBgColor">
+    ngClass 1 
+</div>
+
+<p>
+</p>
+
+<div [class]="theme">
+    ngClass 2 
+</div>
+
+<p>
+</p>
+
+<div [class]="isMultiColor === true ? ['redBackground', 'blueFont'] : 'redBackground'">
+    ngClass 3 
+</div>

@@ -1,0 +1,18 @@
+<p>ng-for works!</p>
+
+@for (pet of pets; track pet) {
+    <p>{{pet}}</p>
+}
+
+<p *ngFor="let pet of pets">
+    {{pet}}
+</p>
+
+<label for="pet-select">Choose a pet:</label>
+
+<select name="pets" id="pet-select">
+  <option *ngFor="let p of petsCollection; track id" [value]="p.id">
+    {{p.name}}
+  </option>
+</select>
+
