@@ -1,0 +1,20 @@
+<p>singal works!</p>
+
+name: {{name()}} <br/>
+rollnumber: <input type="text" [value]="rollNumber()"/>
+
+<p>
+    <input type="button" value="Increment" (click)="increment()" />
+</p>
+
+<p>
+    Length:  <input type="text" [(ngModel)]="length"/> <br/>  
+    Height:  <input type="text" [(ngModel)]="height"/> <br/>
+</p>
+
+<p>
+    Computed Signals <br/>
+    Height: {{height()}} <br/>
+    Length: {{length()}} <br/>
+    Area: {{area()}}
+</p>
