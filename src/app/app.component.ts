@@ -6,6 +6,9 @@ import { NgIfComponent } from './ng-if/ng-if.component';
 import { NgForComponent } from './ng-for/ng-for.component';
 import { NgClassComponent } from './ng-class/ng-class.component';
 import { NgStyleComponent } from './ng-style/ng-style.component';
+import { ControlFlowStatementsComponent } from './control-flow-statements/control-flow-statements.component';
+import { SingalComponent } from './singal/singal.component';
+import { LinkedSignalComponent } from './linked-signal/linked-signal.component';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +19,10 @@ import { NgStyleComponent } from './ng-style/ng-style.component';
     NgIfComponent,
     NgForComponent,
     NgClassComponent,
-    NgStyleComponent
+    NgStyleComponent,
+    ControlFlowStatementsComponent,
+    SingalComponent,
+    LinkedSignalComponent
     ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
