@@ -1,0 +1,43 @@
+<p>Http Get -> Get Records </p>
+
+<div>
+    <button type="button" (click)="getUsers()">Get Users</button> 
+    <table>
+        <caption>
+         User Details
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">User Id</th>
+            <th scope="col">User Name</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+            @for (user of users; track $index) {
+                <tr>
+                    <td scope="col">{{user.user_id}}</td>
+                    <td scope="col">{{user.username}}</td>
+                    <td scope="col">{{user.email}}</td>
+                  </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<p>
+    <button type="button" (click)="getProducts()">Get Products</button> 
+    <br/>
+    Products: 
+    <select>
+        @for (product of products; track $index) {
+            <option [value]="product.product_id">{{product.name}}</option>
+        }
+      </select>
+</p>
+
+<p> Powered By https://app.beeceptor.com</p>
+
+      
+
+

@@ -9,9 +9,19 @@
 <app-ng-style></app-ng-style>
 <app-control-flow-statements></app-control-flow-statements>
 <app-singal></app-singal>
+<app-linked-signal></app-linked-signal>
 -->
 
-<app-linked-signal></app-linked-signal>
+
+<ul>
+    <li><a routerLink="getapi" routerLinkActive="active" ariaCurrentWhenActive="page">Get Api</a></li>
+    <li><a [routerLink]="'reactiveform'" routerLinkActive="active" ariaCurrentWhenActive="page">Reactive Form</a></li>
+    <li style="float:right;"> 
+        <button type="button" routerLink="about" routerLinkActive="active" ariaCurrentWhenActive="page">About</button>
+    </li>
+  </ul> 
+
+<router-outlet></router-outlet>
 
 
 

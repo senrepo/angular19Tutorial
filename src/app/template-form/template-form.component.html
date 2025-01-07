@@ -1,0 +1,38 @@
+<p>template-form works!</p>
+
+
+<form class="form-example" #customerForm="ngForm">
+    <div class="form-example">
+      <label for="name"> First Name: <span class="text-danger">*</span> </label>
+      <input type="text" #fname="ngModel" name="firstName" [(ngModel)]="customer.firstName"  required />
+      @if(fname.errors?.['required'] && fname.touched && fname.dirty) {
+        <span> First Name is required </span>
+      }
+    </div>
+    <div class="form-example">
+        <label for="name"> Last Name:  <span class="text-danger">*</span> </label>
+        <input type="text" #lname="ngModel" name="lastName" [(ngModel)]="customer.lastName" required minlength="4" />
+        <span *ngIf="lname.errors?.['required'] && lname.touched">Last name is required</span>
+        <span *ngIf="lname.errors?.['minlength'] && lname.touched">Last name should be atleast 4 chars length</span>
+    </div>  
+    <div class="form-example">
+        <label>State: </label>
+        <select name="state" [(ngModel)]="customer.state" >
+            <option value="">--Please choose a State--</option>
+            <option value="CT">Connecticut</option>
+            <option value="NC">North Carolina</option>
+            <option value="TX">Texas</option>
+            <option value="CA">California</option>
+            <option value="MN">Minnesota</option>
+          </select>
+    </div>    
+    <div class="form-example">
+        <label>* Agree the Terms</label>
+        <input type="checkbox" name="isTermsAgree" [(ngModel)]="customer.isTermsAgree" />
+
+    </div>
+    <div class="form-example">
+        <input type="submit" value="Save" (click)="save()" [disabled]="customerForm.invalid" />
+      </div>         
+  </form>
+  

@@ -1,0 +1,47 @@
+<p>reactive-form works!</p>
+
+<form class="form-example" [formGroup]="customerForm" (ngSubmit)="save()">
+    <div class="form-example">
+      <label for="name"> First Name: <span class="text-danger">*</span> </label>
+      <input type="text" formControlName="firstName" />
+      @if(customerForm.controls['firstName'].errors?.['required']  
+          && customerForm.controls['firstName'].touched  
+          && customerForm.controls['firstName'].dirty) {
+        <span> First Name is required </span>
+      }
+    </div>
+    <div class="form-example">
+        <label for="name"> Last Name:  <span class="text-danger">*</span> </label>
+        <input type="text" formControlName="lastName"  />
+        @if(customerForm.controls['lastName'].errors?.['required'] && 
+            customerForm.controls['lastName'].touched &&
+            customerForm.controls['lastName'].dirty) {
+            <span> Last Name is required </span>
+        } 
+        @if(customerForm.controls['lastName'].errors?.['minlength'] && 
+            customerForm.controls['lastName'].touched &&
+            customerForm.controls['lastName'].dirty) {
+            <span> Last name should be atleast 4 chars length </span>
+        }                
+    </div>  
+    <div class="form-example">
+        <label>State: </label>
+        <select name="state" formControlName="state" >
+            <option value="">--Please choose a State--</option>
+            <option value="CT">Connecticut</option>
+            <option value="NC">North Carolina</option>
+            <option value="TX">Texas</option>
+            <option value="CA">California</option>
+            <option value="MN">Minnesota</option>
+          </select>
+    </div>    
+    <div class="form-example">
+        <label>* Agree the Terms</label>
+        <input type="checkbox" formControlName="isTermsAgree"/>
+
+    </div>
+    <div class="form-example">
+        <input type="submit" value="Save" [disabled]="customerForm.invalid"  />
+      </div>         
+  </form>
+  
