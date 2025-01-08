@@ -1,0 +1,15 @@
+<p>Http PUT ->  update a record</p>
+<p> powered by http://freeapi.miniprojectideas.com/index.html </p>
+
+post json data: <br/>
+
+<textarea [(ngModel)]="data" rows="20" cols="100">
+
+</textarea>
+
+<br/>
+<input type="button" value="Post Data" (click)="postData()" />
+
+<br/> <br/>
+
+Hooks Data: <pre>{{ hooks | json }}</pre>

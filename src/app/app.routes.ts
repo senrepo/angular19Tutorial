@@ -13,6 +13,9 @@ import { AboutComponent } from './about/about.component';
 import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { GetApiComponent } from './get-api/get-api.component';
+import { PostApiComponent } from './post-api/post-api.component';
+import { PutApiComponent } from './put-api/put-api.component';
+import { DeleteApiComponent } from './delete-api/delete-api.component';
 
 export const routes: Routes = [
     { path: 'admin', component: AdminComponent },  
@@ -29,6 +32,10 @@ export const routes: Routes = [
     { path: 'templateform', component: TemplateFormComponent },
     { path: 'reactiveform', component: ReactiveFormComponent },
     { path: 'getapi', component: GetApiComponent },
+    { path: 'postapi', component: PostApiComponent },
+    { path: 'putapi', component: PutApiComponent },
+    { path: 'deleteapi', component: DeleteApiComponent },
+
     { path: '', redirectTo: 'databinding',  pathMatch: 'full' },
     { path: '**', component: PageNotFoundComponent }
 ];
