@@ -1,1 +1,15 @@
-<p>delete-api works!</p>
+<p>Http DELETE ->  delete a record</p>
+<p> powered by http://freeapi.miniprojectideas.com/index.html </p>
+
+delete json data: <br/>
+
+<textarea [(ngModel)]="data" rows="20" cols="100">
+
+</textarea>
+
+<br/>
+<input type="button" value="Delete Data" (click)="deleteData()" />
+
+<br/> <br/>
+
+Hooks Data: <pre>{{ hooks | json }}</pre>

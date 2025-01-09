@@ -1,0 +1,15 @@
+<p>resource-api works!</p>
+
+<p> user list resource service completion status: {{userList.hasValue()}} </p>
+
+<ul>
+    @for(item of userList.value(); track $index) {
+        <li> {{item.name}} - {{item.username}} </li>
+    }
+</ul>
+
+<p> user list resource service loading status: {{userList.isLoading()}} </p>
+
+
+Reload
+<input type="button" value="Reload" (click)="reload()" />

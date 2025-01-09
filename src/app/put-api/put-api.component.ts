@@ -14,7 +14,7 @@ export class PutApiComponent {
   data: any;
 
   constructor(private httpClient: HttpClient) {
-
+    this.getHooks();
   }
 
   getHooks() {
@@ -23,8 +23,8 @@ export class PutApiComponent {
     });
   }
 
-  postData() {
-    this.httpClient.post("https://posthook-api.mock.beeceptor.com/v1/hooks", this.data).subscribe((response: any) => {
+  putData() {
+    this.httpClient.put("https://posthook-api.mock.beeceptor.com/v1/hooks", this.data).subscribe((response: any) => {
       console.log(response);
       this.getHooks();
     });
