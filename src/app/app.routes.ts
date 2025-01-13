@@ -18,6 +18,7 @@ import { PutApiComponent } from './put-api/put-api.component';
 import { DeleteApiComponent } from './delete-api/delete-api.component';
 import { ResourceApiComponent } from './resource-api/resource-api.component';
 import { LifecyleComponent } from './lifecyle/lifecyle.component';
+import { PipeComponent } from './pipe/pipe.component';
 
 export const routes: Routes = [
     { path: 'admin', component: AdminComponent },  
@@ -39,6 +40,7 @@ export const routes: Routes = [
     { path: 'deleteapi', component: DeleteApiComponent },
     { path: 'resourceapi', component: ResourceApiComponent },
     { path: 'lifecyle', component: LifecyleComponent },
+    { path: 'pipe', component: PipeComponent},
 
     { path: '', redirectTo: 'databinding',  pathMatch: 'full' },
     { path: '**', component: PageNotFoundComponent }

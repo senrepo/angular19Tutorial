@@ -1,0 +1,39 @@
+<p>pipe works!</p>
+
+
+<table>
+    <caption>
+      Products - {{currentDate | date: 'fullDate'}}, {{currentDate | date: 'dd-MMM-yy'}}
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price</th>
+        <th scope="col">Discount</th>
+        <th scope="col">Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+        @for(product of products; track $index) {
+            <tr>
+                <td>{{product.product_id}}</td>
+                <td>{{product.name | uppercase}}</td>
+                <td>{{product.description | capitalCase}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.discount}}</td>
+                <td>{{product.rating}}</td>
+              </tr>
+        }
+     
+    </tbody>
+
+  </table>
+  
+
+
+<pre>
+    {{products | json}}
+</pre>
+

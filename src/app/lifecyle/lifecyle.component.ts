@@ -16,20 +16,20 @@ export class LifecyleComponent implements OnInit, AfterContentInit, AfterContent
     console.log("ngOnInit - invoke api calls")
   }
 
-  ngAfterViewChecked(): void {
-    console.log("ngAfterViewChecked")
-  }
-
-  ngAfterViewInit(): void {
-    console.log("ngAfterViewInit - viewchild, getting reference of the html elements");
-  }
-
   ngAfterContentChecked(): void {
     console.log("ngAfterContentChecked")
   }
 
   ngAfterContentInit(): void {
     console.log("ngAfterContentInit")
+  }
+
+  ngAfterViewChecked(): void {
+    console.log("ngAfterViewChecked")
+  }
+
+  ngAfterViewInit(): void {
+    console.log("ngAfterViewInit - viewchild, getting reference of the html elements");
   }
 
   ngOnDestroy(): void {
