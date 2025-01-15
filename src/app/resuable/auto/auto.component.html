@@ -1,0 +1,22 @@
+<p>auto works!</p>
+
+<app-tabs [tabList]="tabs" (onTabSelected)="onTabSelected($event)"></app-tabs>
+
+<section *ngIf="selectedTab === 'Cars'">
+    <caption> Cars </caption>
+    <ul>
+        @for (car of cars; track $index) {
+            <li> {{car}} </li>
+        }
+    </ul>
+</section>
+
+<section  *ngIf="selectedTab === 'Trucks'">
+    <caption> Trucks </caption>
+    <ul>
+        @for (truck of trucks; track $index) {
+            <li> {{truck}} </li>
+        }
+    </ul>
+
+</section>

@@ -19,6 +19,8 @@ import { DeleteApiComponent } from './delete-api/delete-api.component';
 import { ResourceApiComponent } from './resource-api/resource-api.component';
 import { LifecyleComponent } from './lifecyle/lifecyle.component';
 import { PipeComponent } from './pipe/pipe.component';
+import { AutoComponent } from './resuable/auto/auto.component';
+import { GroceryComponent } from './resuable/grocery/grocery.component';
 
 export const routes: Routes = [
     { path: 'admin', component: AdminComponent },  
@@ -41,6 +43,8 @@ export const routes: Routes = [
     { path: 'resourceapi', component: ResourceApiComponent },
     { path: 'lifecyle', component: LifecyleComponent },
     { path: 'pipe', component: PipeComponent},
+    { path: 'auto', component: AutoComponent},
+    { path: 'grocery', component: GroceryComponent},
 
     { path: '', redirectTo: 'databinding',  pathMatch: 'full' },
     { path: '**', component: PageNotFoundComponent }

@@ -1,0 +1,6 @@
+<section>
+    @for (tab of tabList; track $index) {
+        <button type="button"  [ngClass]="selectedTab === tab ? 'highlight' : ''" (click)="tabSelected(tab)"> {{tab}} </button>
+    }
+</section>  
+

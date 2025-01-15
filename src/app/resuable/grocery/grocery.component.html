@@ -1,0 +1,21 @@
+<p>grocery works!</p>
+
+<app-tabs [tabList]="['Fruits','Vegetables']" (onTabSelected)="onTabSelected($event)"></app-tabs>
+
+<section  *ngIf="selectedTab === 'Fruits'">
+    <caption> Fruits </caption>
+    <ul>
+        @for (fruit of fruits; track $index) {
+            <li> {{fruit}} </li>
+        }
+    </ul>
+</section>
+
+<section  *ngIf="selectedTab === 'Vegetables'">
+    <caption> Vegetables </caption>
+    <ul>
+        @for (vegetable of vegetables; track $index) {
+            <li> {{vegetable}} </li>
+        }
+    </ul>
+</section>  
