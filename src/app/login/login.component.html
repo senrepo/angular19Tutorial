@@ -1,0 +1,14 @@
+<form class="form-example">
+    <div class="form-example">
+      <label for="userid">UserId: </label>
+      <input type="text" name="userid" id="userid" required [(ngModel)]="login.userid" />
+    </div>
+    <div class="form-example">
+      <label for="password">Password: </label>
+      <input type="password" name="password" id="password" required [(ngModel)]="login.password" />
+    </div>
+    <div class="form-example">
+      <input type="button" value="Login" (click)="signIn()" />
+    </div>
+  </form>
+  

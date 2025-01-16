@@ -21,31 +21,40 @@ import { LifecyleComponent } from './lifecyle/lifecyle.component';
 import { PipeComponent } from './pipe/pipe.component';
 import { AutoComponent } from './resuable/auto/auto.component';
 import { GroceryComponent } from './resuable/grocery/grocery.component';
+import { LoginComponent } from './login/login.component';
+import { LayoutComponent } from './layout/layout.component';
+import { authGuard } from './guard/auth.guard';
 
 export const routes: Routes = [
-    { path: 'admin', component: AdminComponent },  
-    { path: 'user', component: UserComponent },
-    { path: 'databinding', component: DataBindingComponent },
-    { path: 'ngclass', component: NgClassComponent },
-    { path: 'ngfor', component: NgForComponent },
-    { path: 'ngif', component: NgIfComponent },
-    { path: 'ngstyle', component: NgStyleComponent },
-    { path: 'ngif', component: NgIfComponent },
-    { path: 'signal', component: SingalComponent },
-    { path: 'linkedsignal', component: LinkedSignalComponent },
-    { path: 'about', component: AboutComponent },
-    { path: 'templateform', component: TemplateFormComponent },
-    { path: 'reactiveform', component: ReactiveFormComponent },
-    { path: 'getapi', component: GetApiComponent },
-    { path: 'postapi', component: PostApiComponent },
-    { path: 'putapi', component: PutApiComponent },
-    { path: 'deleteapi', component: DeleteApiComponent },
-    { path: 'resourceapi', component: ResourceApiComponent },
-    { path: 'lifecyle', component: LifecyleComponent },
-    { path: 'pipe', component: PipeComponent},
-    { path: 'auto', component: AutoComponent},
-    { path: 'grocery', component: GroceryComponent},
+    { path: '', redirectTo: 'login', pathMatch: 'full' }, //default route
+    { path: 'login', component: LoginComponent }, //login route
+    { path: 'layout', component: LayoutComponent,
+        canActivate: [authGuard],//layout route
+        children: [
+            { path: 'admin', component: AdminComponent },
+            { path: 'user', component: UserComponent },
+            { path: 'databinding', component: DataBindingComponent },
+            { path: 'ngclass', component: NgClassComponent },
+            { path: 'ngfor', component: NgForComponent },
+            { path: 'ngif', component: NgIfComponent },
+            { path: 'ngstyle', component: NgStyleComponent },
+            { path: 'ngif', component: NgIfComponent },
+            { path: 'signal', component: SingalComponent },
+            { path: 'linkedsignal', component: LinkedSignalComponent },
+            { path: 'about', component: AboutComponent },
+            { path: 'templateform', component: TemplateFormComponent },
+            { path: 'reactiveform', component: ReactiveFormComponent },
+            { path: 'getapi', component: GetApiComponent },
+            { path: 'postapi', component: PostApiComponent },
+            { path: 'putapi', component: PutApiComponent },
+            { path: 'deleteapi', component: DeleteApiComponent },
+            { path: 'resourceapi', component: ResourceApiComponent },
+            { path: 'lifecyle', component: LifecyleComponent },
+            { path: 'pipe', component: PipeComponent },
+            { path: 'auto', component: AutoComponent },
+            { path: 'grocery', component: GroceryComponent },
+        ]
+    },
 
-    { path: '', redirectTo: 'databinding',  pathMatch: 'full' },
     { path: '**', component: PageNotFoundComponent }
 ];
