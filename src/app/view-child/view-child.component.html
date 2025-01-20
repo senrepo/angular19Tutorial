@@ -1,0 +1,19 @@
+<p>view-child works!</p>
+
+Enter City: <input type="text" #city >
+
+
+<app-tabs [tabList]="['Charlotte', 'Hartford']"></app-tabs>
+
+<p></p>
+
+<section>
+    <input type="button" value="Submit" (click)="submit()" />
+</section>
+
+<p></p>
+
+<section>
+    selected City: {{selectedCity}} <br/>
+    selected Tab: {{this.selectedTab}}
+</section>

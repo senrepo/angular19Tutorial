@@ -24,11 +24,14 @@ import { GroceryComponent } from './resuable/grocery/grocery.component';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
 import { authGuard } from './guard/auth.guard';
+import { ViewChildComponent } from './view-child/view-child.component';
+import { NgTemplateAndNgContainerComponent } from './ng-template-and-ng-container/ng-template-and-ng-container.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' }, //default route
     { path: 'login', component: LoginComponent }, //login route
-    { path: 'layout', component: LayoutComponent,
+    {
+        path: 'layout', component: LayoutComponent,
         canActivate: [authGuard],//layout route
         children: [
             { path: 'admin', component: AdminComponent },
@@ -53,6 +56,8 @@ export const routes: Routes = [
             { path: 'pipe', component: PipeComponent },
             { path: 'auto', component: AutoComponent },
             { path: 'grocery', component: GroceryComponent },
+            { path: 'viewchild', component: ViewChildComponent },
+            { path: 'ngTemplateNgContainer', component: NgTemplateAndNgContainerComponent}
         ]
     },
 

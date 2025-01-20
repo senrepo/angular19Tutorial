@@ -1,0 +1,55 @@
+<table>
+    <!-- ngcontainer is imaginary element-->
+    <ng-container *ngIf="isLoader">
+        <tr>
+            <td colspan="4">
+                Loading...
+            </td>
+        </tr>
+    </ng-container>
+
+    <ng-container *ngIf="!isLoader">
+        <tr>
+            <td>Student Id</td>
+            <td>Name</td>
+            <td>Score</td>
+            <td>Grade</td>
+        </tr>
+
+        @for (student of students; track $index) {
+        <tr>
+            <td>{{student.studentId}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.score}}</td>
+            <td>
+                <!-- Option 1-->
+                <!-- <ng-container *ngIf="student.score > 60; else fail">
+                    <ng-template [ngTemplateOutlet]="pass"></ng-template>
+                </ng-container> -->
+
+                <!-- Option 2-->
+                <ng-container [ngSwitch]="student.score > 60">
+                    <ng-template *ngSwitchCase="true" [ngTemplateOutlet]="pass"></ng-template>
+                    <ng-template *ngSwitchCase="false" [ngTemplateOutlet]="fail"></ng-template>
+                </ng-container>
+
+            </td>
+        </tr>
+        }
+    </ng-container>
+
+
+</table>
+
+<!-- "ng-template" reusable blocks of HTML and will be injected with conditions -->
+<ng-template #pass>
+    <div class="pass">
+        Pass
+    </div>
+</ng-template>
+
+<ng-template #fail>
+    <div class="fail">
+        Fail
+    </div>
+</ng-template>
