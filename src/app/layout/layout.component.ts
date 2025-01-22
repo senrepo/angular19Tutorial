@@ -15,6 +15,7 @@ export class LayoutComponent {
 
   logoff() {
     localStorage.removeItem("angular19user");
+    localStorage.removeItem("token");
     this.router.navigateByUrl("login");
   }
 

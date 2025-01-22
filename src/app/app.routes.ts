@@ -26,6 +26,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { authGuard } from './guard/auth.guard';
 import { ViewChildComponent } from './view-child/view-child.component';
 import { NgTemplateAndNgContainerComponent } from './ng-template-and-ng-container/ng-template-and-ng-container.component';
+import { WeatherForecastComponent } from './weather-forecast/weather-forecast.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' }, //default route
@@ -57,7 +58,8 @@ export const routes: Routes = [
             { path: 'auto', component: AutoComponent },
             { path: 'grocery', component: GroceryComponent },
             { path: 'viewchild', component: ViewChildComponent },
-            { path: 'ngTemplateNgContainer', component: NgTemplateAndNgContainerComponent}
+            { path: 'ngTemplateNgContainer', component: NgTemplateAndNgContainerComponent},
+            { path: 'weatherforecast', component: WeatherForecastComponent}
         ]
     },
 
