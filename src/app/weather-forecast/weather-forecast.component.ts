@@ -18,19 +18,31 @@ export class WeatherForecastComponent {
   loadData() {
     const token = localStorage.getItem('token');
 
-    this.httpClient.get('https://localhost:7070/api/WeatherForecast', 
-    {
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    }).subscribe({
-      next: (data: any) => {
-        this.weatherData = data;
-      },
-      error: (error) => {
-        console.log(error);
-        alert(error.error);
-      }
-    })
+    // this.httpClient.get('https://localhost:7070/api/WeatherForecast', 
+    // {
+    //   headers: {
+    //     'Authorization': `Bearer ${token}`
+    //   }
+    // }).subscribe({
+    //   next: (data: any) => {
+    //     this.weatherData = data;
+    //   },
+    //   error: (error) => {
+    //     console.log(error);
+    //     alert(error.error);
+    //   }
+    // });
+
+    //with interceptor adding the auth headers
+    this.httpClient.get('https://localhost:7070/api/WeatherForecast').subscribe({
+        next: (data: any) => {
+          this.weatherData = data;
+        },
+        error: (error) => {
+          console.log(error);
+          alert(error.error);
+        }
+      });
+
   }
 }

@@ -37,7 +37,7 @@ export class LoginComponent {
   serverSignIn() {
     this.httpClient.post('https://localhost:7070/api/auth/login', {'username': this.login.userid, 'password' : this.login.password}).subscribe({
       next: (response:any) => {
-        localStorage.setItem("angular19user", this.login.userid);
+        //localStorage.setItem("angular19user", this.login.userid);
         localStorage.setItem("token", response.token);
         this.router.navigateByUrl("layout");
       },
